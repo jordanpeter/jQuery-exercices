@@ -16,8 +16,59 @@
      <button type="button" style="width:100px; height:100px" id="btnShifumi">SHIFUMI</button>
      <script>
           $(document).ready(function(){
-               
+               var array =["Pierre","Papier","Ciseaux"] ;
+               var choix = "";
+               var ptsJoueur = 0;
+               var ptsOrdi = 0;
+               var parties = 0;
+               var moyJoueur = 0;
+               var moyOrdi = 0;
+               var draw = 0;
+               var moyDraw = 0;
+               $('#btnRock').on('click',function(){
+                    choix = array[0];
+                    console.log("Vous avez choisi "+array[0])
                });
+
+               $('#btnPaper').on('click',function(){
+                    choix = array[1];
+                    console.log("Vous avez choisi "+array[1])
+               });
+
+               $('#btnCisor').on('click',function(){
+                    choix = array[2];
+                    console.log("Vous avez choisi "+array[2])
+               });
+
+               $('#btnShifumi').on('click',function(){
+                    var choixOrdi = Math.round(Math.random(3-0)*2);
+                    choixOrdi= array[choixOrdi];
+                    if (choixOrdi === choix){
+                         alert("DRAW");
+                         parties++;
+                         draw++;
+                    }
+                    else if((choixOrdi === "Pierre" && choix === "Papier") ||
+                              (choixOrdi === "Papier" && choix === "Ciseaux") ||
+                                   (choixOrdi === "Ciseaux" && choix === "Pierre")){
+                         parties++;
+                         alert("L'ordi a perdu, joueur gagnant");
+                         ptsJoueur++;
+                    }
+                    else{
+                         parties++;
+                         alert("L'ordi a gagner, joueur perdant !")
+                         ptsOrdi++;
+                    }
+                    moyJoueur = ((ptsJoueur / parties) *100);
+                    moyOrdi = (ptsOrdi / parties)*100;
+                    moyDraw = (draw / parties)*100;
+                    console.log("Nbre de parties jouées : "+parties);
+                    console.log("Nombre de DRAW : "+draw+" et donc un pourcentage de "+moyDraw+" %");
+                    console.log("Ordi a "+ptsOrdi+" victoires, moyenne de victoire : " +moyOrdi+ " %");
+                    console.log("Joueur a "+ptsJoueur+" victoires, moyenne de victoire :" +moyJoueur+" %");
+               });
+          });
      </script>
 </body>
 </html>
