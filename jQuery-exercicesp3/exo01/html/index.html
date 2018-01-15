@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <title>Document</title>
+     <script src="../js/jquery-2.2.4.js"></script>
+</head>
+<body>
+     <button type="button" style="width:100px; height:100px"></button>
+     <form id="cpt">
+          Cliquez bande de salopes<br>
+            <input type="texte" value="" id="inin"><br>
+
+     </form>
+
+     <script>
+          $(document).ready(function(){
+               var x = 0;
+               $('button').on('click', function(){
+                    x++;
+                    $('#inin').val(x);
+               });
+          });
+     </script>
+</body>
+</html>
