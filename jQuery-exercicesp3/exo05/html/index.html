@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <title>Document</title>
+     <link rel="stylesheet" href="../css/index.css">
+     <script src="../js/jquery-2.2.4.js"></script>
+</head>
+<body>
+     <div id="divdiv"></div>
+     <br>
+     <form action="">
+          <input type="text" value="">
+     </form>
+     <script>
+          $(document).ready(function(){
+               $(document).keydown(function(e){
+                    var pos = $( document ).width();
+                    var x = 0;
+                         if (e.which == 39){
+                              $('#divdiv').css('position','absolute');
+                              $('#divdiv').css('left','+=10px')
+                         }
+                         else if(e.which == 37){
+                              $('#divdiv').css('position','absolute');
+                              $('#divdiv').css('left','-=10px')
+                              x = x-10;
+                         }
+                    })
+               });
+     </script>
+</body>
+</html>

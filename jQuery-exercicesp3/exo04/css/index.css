@@ -1,0 +1,10 @@
+#divdiv{
+     width: 10px;
+     height: 10px;
+     border: 1px solid black;
+}
+
+#divBtn{
+     margin-top: 150px;
+     position:fixed;
+}

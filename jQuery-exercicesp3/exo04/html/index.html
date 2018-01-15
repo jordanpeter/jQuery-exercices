@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <title>Document</title>
+     <link rel="stylesheet" href="../css/index.css">
+     <script src="../js/jquery-2.2.4.js"></script>
+</head>
+<body>
+     <div id="divdiv">h</div>
+     <div id="divBtn">
+          <button type="button" style="width:100px; height:100px" id="btnSize">Size</button>
+          <button type="button" style="width:100px; height:100px" id="btnGreen">Green</button>
+               <button type="button" style="width:100px; height:100px" id="btnColor">Color Reinitialized</button>
+                    <button type="button" style="width:100px; height:100px" id="btnHide">Hide</button>
+                         <button type="button" style="width:100px; height:100px" id="btnShow">Show</button>
+     </div>
+     <script>
+          $(document).ready(function(){
+               var x = 10;
+               var y = 10;
+
+               $('#btnSize').on('click', function(){
+                    if(y>100){
+                         y = 10;
+                         $('#divdiv').css('height','10px');
+                    }
+                    else{
+                         $('#divdiv').css('height','+=10px');
+                         y+=10;
+                    }
+               });
+               $('#btnGreen').on('click', function(){
+                    $('#divdiv').css('backgroundColor','green');
+               });
+               $('#btnColor').on('click', function(){
+                    $('#divdiv').css('backgroundColor','');
+               });
+               $('#btnHide').on('click', function(){
+                    $('#divdiv').hide();
+               });
+               $('#btnShow').on('click', function(){
+                    $('#divdiv').show();
+               });
+     });
+     </script>
+</body>
+</html>

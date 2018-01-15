@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <title>Document</title>
+     <script src="../js/jquery-2.2.4.js"></script>
+</head>
+<body>
+     <button type="button" style="width:100px; height:100px" id="btn"> Vérif du nombre</button>
+     <button type="button" style="width:100px; height:100px" id="alea">Génère un nombre en cliquant</button>
+     <form id="cpt">
+          Cliquez bande de salopes<br>
+            <input type="texte" value="" id="inin"><br>
+
+     </form>
+
+     <script>
+          $(document).ready(function(){
+               var x = 0;
+               var nbr = 0;
+          $('#alea').on('click',function(){
+               nbr = (Math.random()*(100-1)-0);
+               nbr = Math.round(nbr);
+               alert("Nombre généré");
+               x=0;
+          });
+          $('#btn').on('click',function(){
+               var valeur = $('input[value=""]').val();
+               x++;
+               if (valeur > nbr){
+                    alert("Plus petit");
+               }
+               else if(valeur < nbr){
+                    alert("Plus grand");
+               }
+               else if(valeur == nbr){
+                    alert("BIEN JOUER TU AS REUSSI EN "+x+ " ESSAIS WOOOOW");
+               }
+               else{
+                    alert("Ya un soucis");
+               }
+          });
+
+          });
+     </script>
+</body>
+</html>
