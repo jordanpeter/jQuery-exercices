@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <title>Document</title>
+     <link rel="stylesheet" href="../css/index.css">
+     <script src="../js/jquery-2.2.4.js"></script>
+</head>
+<body>
+     <form action="">
+          Votre Salaire :
+          <input type="text" id="salaire"><br><br>
+          Homme ou femme ?
+          <input type="text" name="gender" value="" checked id="gender"><br><br>
+          Nombre d'enfants:
+          <input type="text" id="enfants">
+          <button type="button" id="btn">Calcul !</button>
+     </form>
+     <script>
+          $(document).ready(function(){
+               $('#btn').on('click',function(){
+                    var gender = $('#gender').val();
+                    gender = gender.toLowerCase();
+                    var salaire = $('#salaire').val();
+                    var nbrEnfants = $('#enfants').val();
+                    var salaireNet = 0;
+                    if (gender === "homme" && nbrEnfants == 4){
+                         salaireNet= salaire -((salaire/100)*28);
+                         console.log("Salaire net = "+salaireNet);
+                    }
+                    else if(gender === "homme" && nbrEnfants == 3){
+                              salaireNet= salaire-((salaire/100)*29);
+                              console.log("Salaire net = "+salaireNet);
+                    }
+                    else if(gender ==="homme"){
+                         salaireNet = salaire -((salaire / 100)*30);
+                         console.log("Salaire net = "+salaireNet);
+                    }
+                    else if(gender ==="femme" && nbrEnfants == 4){
+                         salaireNet = salaire-((salaire/100)*26);
+                         console.log("Salaire net = "+salaireNet);
+                    }
+                    else if(gender ==="femme" && nbrEnfants == 3){
+                         salaireNet = salaire-((salaire/100)*27);
+                         console.log("Salaire net = "+salaireNet);
+                    }
+                    else if(gender ==="femme"){
+                         salaireNet=salaire-((salaire/100)*28);
+                         console.log("Salaire net = "+salaireNet);
+                    }
+               })
+          });
+     </script>
+</body>
+</html>
